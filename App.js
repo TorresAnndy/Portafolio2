@@ -48,7 +48,7 @@ export default function App() {
           <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
             <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Sobre mí</Text>
             <Text style={[styles.sectionContent, isDarkMode && styles.darkModeText]}>
-              Estudiante de 3er semestre de Ingenieri en Tecnologias de la Informacion
+              Estudiante de 3er semestre de Ingenieria en Tecnologias de la Informacion
             </Text>
           </View>
 
