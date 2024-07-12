@@ -41,15 +41,14 @@ export default function App() {
               style={styles.circularImage}
             />
             <Text style={[styles.headerText, isDarkMode && styles.darkModeText]}>Hola, mi nombre es Andy</Text>
-            <Text style={[styles.subtitle, isDarkMode && styles.darkModeText]}>Desarrollador Web</Text>
+            <Text style={[styles.subtitle, isDarkMode && styles.darkModeText]}>Estudiante</Text>
           </View>
 
           {/* Sobre mí */}
           <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
             <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Sobre mí</Text>
             <Text style={[styles.sectionContent, isDarkMode && styles.darkModeText]}>
-              Soy un apasionado desarrollador web con experiencia en React Native y TypeScript.
-              Me encanta crear aplicaciones móviles y sitios web eficientes y elegantes.
+              Estudiante de 3er semestre de Ingenieri en Tecnologias de la Informacion
             </Text>
           </View>
 
