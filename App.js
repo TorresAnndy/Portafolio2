@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Switch } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Platform } from 'react-native';
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
@@ -26,13 +25,10 @@ export default function App() {
     Linking.openURL('https://github.com/TorresAnndy');
   };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={[styles.scrollViewContainer, isDarkMode && styles.darkModeContainer]}>
+      <StatusBar style="dark" />
+      <ScrollView contentContainerStyle={styles.scrollViewContainer}>
         <Animated.View style={{ opacity: fadeAnim }}>
           {/* Header */}
           <View style={styles.header}>
@@ -40,79 +36,62 @@ export default function App() {
               source={require('./assets/perfil.png')}
               style={styles.circularImage}
             />
-            <Text style={[styles.headerText, isDarkMode && styles.darkModeText]}>Hola, mi nombre es Andy</Text>
-            <Text style={[styles.subtitle, isDarkMode && styles.darkModeText]}>Estudiante</Text>
+            <Text style={styles.headerText}>Hola, mi nombre es Andy</Text>
+            <Text style={styles.subtitle}>Estudiante</Text>
           </View>
 
           {/* Sobre mí */}
-          <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Sobre mí</Text>
-            <Text style={[styles.sectionContent, isDarkMode && styles.darkModeText]}>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Sobre mí</Text>
+            <Text style={styles.sectionContent}>
               Estudiante de 3er semestre de Ingenieria en Tecnologias de la Informacion
             </Text>
           </View>
 
-          {/* Proyectos */}
-          <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Áreas de Aspiraciones</Text>
+          {/* Áreas de Aspiraciones */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Áreas de Aspiraciones</Text>
             <View style={styles.project}>
               <Image
                 source={require('./assets/perfil.png')}
                 style={styles.projectImage}
               />
               <View style={styles.projectInfo}>
-              <View style={styles.projectInfo}>
-              <Text style={[styles.projectDescription, isDarkMode && styles.darkModeText]}>
-              - Backend
-              </Text>
-              <Text style={[styles.projectDescription, isDarkMode && styles.darkModeText]}>
-              - Ciberseguridad
-              </Text>
-            </View>
-              </View>
-            </View>
-
-            <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Proyecto</Text>
-            <View style={styles.project}>
-              <Image
-                source={require('./assets/perfil.png')}
-                style={styles.projectImage}
-              />
-              <View style={styles.projectInfo}>
-              <View style={styles.projectInfo}>
-              <Text style={[styles.projectDescription, isDarkMode && styles.darkModeText]}>
-              ---CEOYDESK---
-              </Text>
-              <Text style={[styles.projectDescription, isDarkMode && styles.darkModeText]}>
-              Sistema de seguridad a nivel empresarial
-              </Text>
-            </View>
+                <Text style={styles.projectDescription}>- Backend</Text>
+                <Text style={styles.projectDescription}>- Ciberseguridad</Text>
               </View>
             </View>
           </View>
+
+          {/* Proyecto */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Proyecto</Text>
+            <View style={styles.project}>
+              <Image
+                source={require('./assets/perfil.png')}
+                style={styles.projectImage}
+              />
+              <View style={styles.projectInfo}>
+                <Text style={styles.projectDescription}>---CEOYDESK---</Text>
+                <Text style={styles.projectDescription}>Sistema de seguridad a nivel empresarial</Text>
+              </View>
+            </View>
           </View>
 
           {/* Contacto */}
-          <View style={[styles.section, isDarkMode && styles.darkModeSection]}>
-            <Text style={[styles.sectionTitle, isDarkMode && styles.darkModeText]}>Contacto</Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Contacto</Text>
             <View style={styles.contactLinks}>
-              <TouchableOpacity style={[styles.contactLink, isDarkMode && styles.darkModeButton]} onPress={handleLinkedInPress}>
-                <Text style={[styles.contactLinkText, isDarkMode && styles.darkModeButtonText]}>LinkedIn</Text>
+              <TouchableOpacity style={styles.contactLink} onPress={handleLinkedInPress}>
+                <Text style={styles.contactLinkText}>LinkedIn</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.contactLink, isDarkMode && styles.darkModeButton]} onPress={handleGitHubPress}>
-                <Text style={[styles.contactLinkText, isDarkMode && styles.darkModeButtonText]}>GitHub</Text>
+              <TouchableOpacity style={styles.contactLink} onPress={handleGitHubPress}>
+                <Text style={styles.contactLinkText}>GitHub</Text>
               </TouchableOpacity>
             </View>
           </View>
         </Animated.View>
-        <StatusBar style="auto" />
       </ScrollView>
-
-      {/* Botón de Modo Oscuro */}
-      <TouchableOpacity style={styles.darkModeToggle} onPress={toggleDarkMode}>
-        <Text style={styles.darkModeToggleText}>{isDarkMode ? 'Modo Claro' : 'Modo Oscuro'}</Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -120,16 +99,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
   scrollViewContainer: {
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#fff', // Fondo claro por defecto
-  },
-  darkModeContainer: {
-    backgroundColor: '#333', // Fondo oscuro
+    backgroundColor: '#fff', 
   },
   header: {
     alignItems: 'center',
@@ -145,29 +122,26 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 5,
-    color: '#000', // Texto oscuro por defecto
+    color: '#000', 
   },
   subtitle: {
     fontSize: 18,
     color: '#555',
-    marginBottom: 20,
+    marginBottom: 21,
   },
   section: {
     marginBottom: 30,
-  },
-  darkModeSection: {
-    backgroundColor: '#444', // Fondo oscuro para secciones
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#000', // Texto oscuro por defecto
+    color: '#000', 
   },
   sectionContent: {
     fontSize: 16,
     lineHeight: 22,
-    color: '#000', // Texto oscuro por defecto
+    color: '#000', 
   },
   project: {
     flexDirection: 'row',
@@ -182,29 +156,10 @@ const styles = StyleSheet.create({
   projectInfo: {
     flex: 1,
   },
-  projectTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: '#000', // Texto oscuro por defecto
-  },
   projectDescription: {
     fontSize: 14,
     marginBottom: 5,
-    color: '#000', // Texto oscuro por defecto
-  },
-  projectLink: {
-    backgroundColor: '#007bff',
-    padding: 5,
-    borderRadius: 5,
-    marginTop: 5,
-  },
-  projectLinkText: {
-    color: '#fff',
-    textAlign: 'center',
-  },
-  darkModeButton: {
-    backgroundColor: '#555', // Botón oscuro
+    color: '#000', 
   },
   contactLinks: {
     flexDirection: 'row',
@@ -222,22 +177,5 @@ const styles = StyleSheet.create({
     color: '#007bff',
     fontWeight: 'bold',
     textAlign: 'center',
-  },
-  darkModeButtonText: {
-    color: '#fff', // Texto blanco para botones oscuros
-  },
-  darkModeToggle: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: '#007bff',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    zIndex: 1, // Asegura que el botón esté sobre el contenido desplazable
-  },
-  darkModeToggleText: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
 });
