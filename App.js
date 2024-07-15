@@ -60,7 +60,7 @@ export default function App() {
             <Text style={styles.sectionTitle}>Áreas de Aspiraciones</Text>
             <View style={styles.project}>
               <Image
-                source={require('./assets/perfil.png')}
+                source={require('./assets/Progra.png')}
                 style={styles.projectImage}
               />
               <View style={styles.projectInfo}>
