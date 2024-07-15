@@ -25,6 +25,14 @@ export default function App() {
     Linking.openURL('https://github.com/TorresAnndy');
   };
 
+  const handlefacebookPress = () => {
+    Linking.openURL('https://www.facebook.com/andygonzales.gonzalestorres');
+  };
+
+  const handleinstagramPress = () => {
+    Linking.openURL('https://www.instagram.com/gonzalesangel2003/');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
@@ -37,14 +45,13 @@ export default function App() {
               style={styles.circularImage}
             />
             <Text style={styles.headerText}>Hola, mi nombre es Andy</Text>
-            <Text style={styles.subtitle}>Estudiante</Text>
+            <Text style={styles.subtitle}>Junior Developer</Text>
           </View>
-
           {/* Sobre mí */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Sobre mí</Text>
             <Text style={styles.sectionContent}>
-              Estudiante de 3er semestre de Ingenieria en Tecnologias de la Informacion
+              Tengo 21 años, sigo una carrera de Ingenieria en Tecnologias de la Informacion
             </Text>
           </View>
 
@@ -82,11 +89,35 @@ export default function App() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Contacto</Text>
             <View style={styles.contactLinks}>
-              <TouchableOpacity style={styles.contactLink} onPress={handleLinkedInPress}>
-                <Text style={styles.contactLinkText}>LinkedIn</Text>
+
+              <TouchableOpacity onPress={handleLinkedInPress}>
+              <Image
+                source={require('./assets/Linked.png')}
+                style={styles.projectImgcont}
+              />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.contactLink} onPress={handleGitHubPress}>
-                <Text style={styles.contactLinkText}>GitHub</Text>
+
+              <TouchableOpacity onPress={handleGitHubPress}>
+              <Image
+                source={require('./assets/Github.png')}
+                style={styles.projectImgcont}
+              />
+              </TouchableOpacity>
+
+              <TouchableOpacity  onPress={handlefacebookPress}>
+              <Image
+                source={require('./assets/Facebook.png')}
+                style={styles.projectImgcont}
+              />
+
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={handleinstagramPress}>
+              <Image
+                source={require('./assets/Instagram.png')}
+                style={styles.projectImgcont}
+              />
+                
               </TouchableOpacity>
             </View>
           </View>
@@ -101,12 +132,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
+
   scrollViewContainer: {
     flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#fff', 
+    backgroundColor: '#F1EDED', 
   },
   header: {
     alignItems: 'center',
@@ -133,9 +163,10 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   sectionTitle: {
+    backgroundColor: '#781892',
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 15,
     color: '#000', 
   },
   sectionContent: {
@@ -150,6 +181,12 @@ const styles = StyleSheet.create({
   projectImage: {
     width: 100,
     height: 100,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  projectImgcont: {
+    width: 50,
+    height: 50,
     borderRadius: 10,
     marginRight: 10,
   },
@@ -179,3 +216,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
