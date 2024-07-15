@@ -80,7 +80,7 @@ export default function App() {
               />
               <View style={styles.projectInfo}>
                 <Text style={styles.projectDescription}>---CEOYDESK---</Text>
-                <Text style={styles.projectDescription}>
+                <Text style={styles.sectionContent}>
                   Sistema de seguridad a nivel empresarial, el cual contiene sistema de seguridad
                   de ingreso, registro veicular, de la persona, tiempo que ingresa al plantel, sistema de vigilancia
                   24/7, vigilancia aerea con drones
@@ -180,6 +180,8 @@ const styles = StyleSheet.create({
     color: '#000', 
   },
   sectionContent: {
+    alignItems: 'center',
+    textAlign: 'center',
     fontSize: 16,
     lineHeight: 22,
     color: '#000', 
