@@ -80,7 +80,12 @@ export default function App() {
               />
               <View style={styles.projectInfo}>
                 <Text style={styles.projectDescription}>---CEOYDESK---</Text>
-                <Text style={styles.projectDescription}>Sistema de seguridad a nivel empresarial</Text>
+                <Text style={styles.projectDescription}>
+                  Sistema de seguridad a nivel empresarial, el cual contiene sistema de seguridad
+                  de ingreso, registro veicular, de la persona, tiempo que ingresa al plantel, sistema de vigilancia
+                  24/7, vigilancia aerea con drones
+
+                </Text>
               </View>
             </View>
           </View>
@@ -161,9 +166,14 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 30,
+    padding: 10,
+    borderWidth: 2, // Añade esto para el ancho del borde
+    borderColor: '#007bff', // Añade esto para el color del borde
+    borderRadius: 10, // Opcional: para esquinas redondeadas
   },
   sectionTitle: {
-    backgroundColor: '#781892',
+    alignItems: 'center',
+    textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
