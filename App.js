@@ -122,10 +122,25 @@ export default function App() {
                 source={require('./assets/Instagram.png')}
                 style={styles.projectImgcont}
               />
-                
               </TouchableOpacity>
             </View>
           </View>
+
+          {/*Correo*/}
+          <View style={styles.section}>
+            <text style={styles.sectionTitle}>Correo</text>
+
+          </View>
+
+
+
+
+
+
+
+
+
+
         </Animated.View>
       </ScrollView>
     </View>
