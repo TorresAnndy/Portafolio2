@@ -115,7 +115,8 @@ export default function App() {
             
               <View style={styles.projectInfo}>
                 <Text style={styles.sectionContent}>
-                  dhuisbdudubsaduibasiudblasidbaisu
+                  El proyecto permite ingresar, revisar y borrar datos de estudiantes
+                  de una universidad almacenando en una base de datos
                 </Text>
                 
               </View>
@@ -129,7 +130,6 @@ export default function App() {
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>Aprendizaje</Text>
               
-              {/* Primera fila */}
               <View style={styles.contactLinks}>
                 <Image
                   source={require('./assets/c.png')}
@@ -149,7 +149,6 @@ export default function App() {
                 />
               </View>
 
-              {/* Segunda fila */}
               <View style={styles.contactLinks}>
                 <Image
                   source={require('./assets/js.png')}
@@ -169,13 +168,35 @@ export default function App() {
                 />
               </View>
 
-              {/* Tercera fila */}
               <View style={styles.contactLinks}>
                 <Image
                   source={require('./assets/wk.png')}
                   style={styles.lenguajes}
                 />
-                {/* Agrega más imágenes según sea necesario */}
+
+                <Image
+                  source={require('./assets/vsc.png')}
+                  style={styles.lenguajes}
+                />
+
+                <Image
+                  source={require('./assets/linux.png')}
+                  style={styles.lenguajes}
+                />
+
+                <Image
+                  source={require('./assets/ubuntu.png')}
+                  style={styles.lenguajes}
+                />
+
+              </View>
+
+              <View style={styles.contactLinks}>
+              <Image
+                  source={require('./assets/eclipse.png')}
+                  style={styles.lenguajes}
+                />
+
               </View>
 
             </View>
