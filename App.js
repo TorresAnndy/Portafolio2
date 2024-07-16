@@ -126,50 +126,60 @@ export default function App() {
           </View>
 
           {/* Aprendido */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Aprendizaje</Text>
-            <View style={styles.contactLinks}>
-              <Image
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Aprendizaje</Text>
+              
+              {/* Primera fila */}
+              <View style={styles.contactLinks}>
+                <Image
                   source={require('./assets/c.png')}
                   style={styles.lenguajes}
-              />
-              
+                />
                 <Image
                   source={require('./assets/cc.png')}
                   style={styles.lenguajes}
                 />
-
                 <Image
                   source={require('./assets/java.png')}
                   style={styles.projectImgcont}
                 />
-              
                 <Image
                   source={require('./assets/py.png')}
                   style={styles.lenguajes}
                 />
+              </View>
 
+              {/* Segunda fila */}
+              <View style={styles.contactLinks}>
                 <Image
                   source={require('./assets/js.png')}
                   style={styles.lenguajes}
                 />
-
                 <Image
                   source={require('./assets/dc.png')}
                   style={styles.lenguajes}
                 />
-
                 <Image
                   source={require('./assets/cisco.png')}
                   style={styles.lenguajescisco}
                 />
-
                 <Image
                   source={require('./assets/vs.png')}
                   style={styles.lenguajes}
                 />
+              </View>
+
+              {/* Tercera fila */}
+              <View style={styles.contactLinks}>
+                <Image
+                  source={require('./assets/wk.png')}
+                  style={styles.lenguajes}
+                />
+                {/* Agrega más imágenes según sea necesario */}
+              </View>
+
             </View>
-          </View>
+
 
           {/* Contacto */}
           <View style={styles.section}>
@@ -287,6 +297,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginRight: 10,
   },
+
   lenguajescisco: {
     width: 65,
     height: 50,
