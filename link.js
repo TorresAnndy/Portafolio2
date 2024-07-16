@@ -1,12 +1,14 @@
+import { Linking } from 'react-native';
+
 export const handleLinkedInPress = () => {
     Linking.openURL('https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin');
   };
 
-export  const handleGitHubPress = () => {
+export const handleGitHubPress = () => {
     Linking.openURL('https://github.com/TorresAnndy');
   };
 
-export  const handlefacebookPress = () => {
+export const handlefacebookPress = () => {
     Linking.openURL('https://www.facebook.com/andygonzales.gonzalestorres');
   };
 

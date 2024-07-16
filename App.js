@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Platform, TextInput } from 'react-native';
-import * as link from './link'; // Importar todas las funciones desde el archivo LinkingUtils
+import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, ScrollView, Platform} from 'react-native';
+import * as link from './link.js'; // Importar todas las funciones desde el archivo LinkingUtils
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
