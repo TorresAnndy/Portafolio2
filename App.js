@@ -84,7 +84,7 @@ export default function App() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>CEOYDESK</Text>
             <View style={styles.project}>
-            <TouchableOpacity onPress={handleProyectoPress}>
+            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
                 <Image
                   source={require('./assets/s.png')}
                   style={styles.projectImgbdd}
