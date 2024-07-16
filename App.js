@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Platform, TextInput } from 'react-native';
+import * as link from './link'; // Importar todas las funciones desde el archivo LinkingUtils
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -16,30 +17,6 @@ export default function App() {
   useEffect(() => {
     fadeIn();
   }, []);
-
-  const handleLinkedInPress = () => {
-    Linking.openURL('https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin');
-  };
-
-  const handleGitHubPress = () => {
-    Linking.openURL('https://github.com/TorresAnndy');
-  };
-
-  const handlefacebookPress = () => {
-    Linking.openURL('https://www.facebook.com/andygonzales.gonzalestorres');
-  };
-
-  const handleinstagramPress = () => {
-    Linking.openURL('https://www.instagram.com/gonzalesangel2003/');
-  };
-
-  const handleProyectoPress = () => {
-    Linking.openURL('https://github.com/TorresAnndy/AccesoaDatosGonzales2.0');
-  };
-
-  const handleProyectoCeoyDeskPress = () => {
-    Linking.openURL('https://github.com/TorresAnndy/CeoyDesk');
-  };
 
   return (
     <View style={styles.container}>
@@ -84,7 +61,7 @@ export default function App() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>CEOYDESK</Text>
             <View style={styles.project}>
-            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
+            <TouchableOpacity onPress={link.handleProyectoCeoyDeskPress}>
                 <Image
                   source={require('./assets/s.png')}
                   style={styles.projectImgbdd}
@@ -98,7 +75,7 @@ export default function App() {
                 </Text>
               </View>
             </View>
-            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
+            <TouchableOpacity onPress={link.handleProyectoCeoyDeskPress}>
               <Text style={styles.botonesgithub}>GitHub</Text>
               </TouchableOpacity>
           </View>
@@ -106,7 +83,7 @@ export default function App() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Acceso a Datos</Text>
             <View style={styles.project}>
-            <TouchableOpacity onPress={handleProyectoPress}>
+            <TouchableOpacity onPress={link.handleProyectoPress}>
                 <Image
                   source={require('./assets/BDD.png')}
                   style={styles.projectImgbdd}
@@ -121,7 +98,7 @@ export default function App() {
                 
               </View>
             </View>
-            <TouchableOpacity onPress={handleProyectoPress}>
+            <TouchableOpacity onPress={link.handleProyectoPress}>
               <Text style={styles.botonesgithub}>GitHub</Text>
               </TouchableOpacity>
           </View>
@@ -207,28 +184,28 @@ export default function App() {
             <Text style={styles.sectionTitle}>Contacto</Text>
             <View style={styles.contactLinks}>
 
-              <TouchableOpacity onPress={handleLinkedInPress}>
+              <TouchableOpacity onPress={link.handleLinkedInPress}>
                 <Image
                   source={require('./assets/Linked.png')}
                   style={styles.projectImgcont}
                 />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={handleGitHubPress}>
+              <TouchableOpacity onPress={link.handleGitHubPress}>
                 <Image
                   source={require('./assets/Github.png')}
                   style={styles.projectImgcont}
                 />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={handlefacebookPress}>
+              <TouchableOpacity onPress={link.handlefacebookPress}>
                 <Image
                   source={require('./assets/Facebook.png')}
                   style={styles.projectImgcont}
                 />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={handleinstagramPress}>
+              <TouchableOpacity onPress={link.handleinstagramPress}>
                 <Image
                   source={require('./assets/Instagram.png')}
                   style={styles.projectImgcont}
