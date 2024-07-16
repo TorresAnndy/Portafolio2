@@ -127,7 +127,7 @@ export default function App() {
 
           {/* Aprendido */}
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Lenguajes</Text>
+            <Text style={styles.sectionTitle}>Aprendizaje</Text>
             <View style={styles.contactLinks}>
               <Image
                   source={require('./assets/c.png')}
@@ -136,7 +136,7 @@ export default function App() {
               
                 <Image
                   source={require('./assets/cc.png')}
-                  style={styles.projectImgcont}
+                  style={styles.lenguajes}
                 />
 
                 <Image
@@ -146,7 +146,27 @@ export default function App() {
               
                 <Image
                   source={require('./assets/py.png')}
-                  style={styles.projectImgcont}
+                  style={styles.lenguajes}
+                />
+
+                <Image
+                  source={require('./assets/js.png')}
+                  style={styles.lenguajes}
+                />
+
+                <Image
+                  source={require('./assets/dc.png')}
+                  style={styles.lenguajes}
+                />
+
+                <Image
+                  source={require('./assets/cisco.png')}
+                  style={styles.lenguajescisco}
+                />
+
+                <Image
+                  source={require('./assets/vs.png')}
+                  style={styles.lenguajes}
                 />
             </View>
           </View>
@@ -263,6 +283,12 @@ const styles = StyleSheet.create({
   },
   lenguajes: {
     width: 50,
+    height: 50,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  lenguajescisco: {
+    width: 65,
     height: 50,
     borderRadius: 10,
     marginRight: 10,
