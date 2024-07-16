@@ -121,7 +121,7 @@ export default function App() {
                 
               </View>
             </View>
-            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
+            <TouchableOpacity onPress={handleProyectoPress}>
               <Text style={styles.botonesgithub}>GitHub</Text>
               </TouchableOpacity>
           </View>
