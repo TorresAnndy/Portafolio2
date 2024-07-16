@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, TouchableOpacity, Linking, ScrollView, Platform, TextInput } from 'react-native';
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -31,6 +31,14 @@ export default function App() {
 
   const handleinstagramPress = () => {
     Linking.openURL('https://www.instagram.com/gonzalesangel2003/');
+  };
+
+  const handleProyectoPress = () => {
+    Linking.openURL('https://github.com/TorresAnndy/AccesoaDatosGonzales2.0');
+  };
+
+  const handleProyectoCeoyDeskPress = () => {
+    Linking.openURL('https://github.com/TorresAnndy/CeoyDesk');
   };
 
   return (
@@ -70,23 +78,76 @@ export default function App() {
             </View>
           </View>
 
+          <Text style={styles.sectionTitle}>Proyecto</Text>
+
           {/* Proyecto */}
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Proyecto</Text>
+            <Text style={styles.sectionTitle}>CEOYDESK</Text>
             <View style={styles.project}>
-              <Image
-                source={require('./assets/perfil.png')}
-                style={styles.projectImage}
-              />
+            <TouchableOpacity onPress={handleProyectoPress}>
+                <Image
+                  source={require('./assets/s.png')}
+                  style={styles.projectImgbdd}
+                />
+              </TouchableOpacity>
               <View style={styles.projectInfo}>
-                <Text style={styles.projectDescription}>---CEOYDESK---</Text>
                 <Text style={styles.sectionContent}>
                   Sistema de seguridad a nivel empresarial, el cual contiene sistema de seguridad
-                  de ingreso, registro veicular, de la persona, tiempo que ingresa al plantel, sistema de vigilancia
+                  de ingreso, registro vehicular, de la persona, tiempo que ingresa al plantel, sistema de vigilancia
                   24/7, vigilancia aerea con drones
-
                 </Text>
               </View>
+            </View>
+            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
+              <Text style={styles.botonesgithub}>GitHub</Text>
+              </TouchableOpacity>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Acceso a Datos</Text>
+            <View style={styles.project}>
+            <TouchableOpacity onPress={handleProyectoPress}>
+                <Image
+                  source={require('./assets/BDD.png')}
+                  style={styles.projectImgbdd}
+                />
+              </TouchableOpacity>
+            
+              <View style={styles.projectInfo}>
+                <Text style={styles.sectionContent}>
+                  dhuisbdudubsaduibasiudblasidbaisu
+                </Text>
+                
+              </View>
+            </View>
+            <TouchableOpacity onPress={handleProyectoCeoyDeskPress}>
+              <Text style={styles.botonesgithub}>GitHub</Text>
+              </TouchableOpacity>
+          </View>
+
+          {/* Aprendido */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Lenguajes</Text>
+            <View style={styles.contactLinks}>
+              <Image
+                  source={require('./assets/c.png')}
+                  style={styles.lenguajes}
+              />
+              
+                <Image
+                  source={require('./assets/cc.png')}
+                  style={styles.projectImgcont}
+                />
+
+                <Image
+                  source={require('./assets/java.png')}
+                  style={styles.projectImgcont}
+                />
+              
+                <Image
+                  source={require('./assets/py.png')}
+                  style={styles.projectImgcont}
+                />
             </View>
           </View>
 
@@ -96,51 +157,34 @@ export default function App() {
             <View style={styles.contactLinks}>
 
               <TouchableOpacity onPress={handleLinkedInPress}>
-              <Image
-                source={require('./assets/Linked.png')}
-                style={styles.projectImgcont}
-              />
+                <Image
+                  source={require('./assets/Linked.png')}
+                  style={styles.projectImgcont}
+                />
               </TouchableOpacity>
 
               <TouchableOpacity onPress={handleGitHubPress}>
-              <Image
-                source={require('./assets/Github.png')}
-                style={styles.projectImgcont}
-              />
+                <Image
+                  source={require('./assets/Github.png')}
+                  style={styles.projectImgcont}
+                />
               </TouchableOpacity>
 
-              <TouchableOpacity  onPress={handlefacebookPress}>
-              <Image
-                source={require('./assets/Facebook.png')}
-                style={styles.projectImgcont}
-              />
-
+              <TouchableOpacity onPress={handlefacebookPress}>
+                <Image
+                  source={require('./assets/Facebook.png')}
+                  style={styles.projectImgcont}
+                />
               </TouchableOpacity>
 
               <TouchableOpacity onPress={handleinstagramPress}>
-              <Image
-                source={require('./assets/Instagram.png')}
-                style={styles.projectImgcont}
-              />
+                <Image
+                  source={require('./assets/Instagram.png')}
+                  style={styles.projectImgcont}
+                />
               </TouchableOpacity>
             </View>
           </View>
-
-          {/*Correo*/}
-          <View style={styles.section}>
-            <text style={styles.sectionTitle}>Correo</text>
-
-          </View>
-
-
-
-
-
-
-
-
-
-
         </Animated.View>
       </ScrollView>
     </View>
@@ -149,14 +193,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff', 
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 30 : 0,
+    paddingTop: Platform.OS === 'android' ? 29 : 0,
   },
-
   scrollViewContainer: {
     flexGrow: 1,
     padding: 20,
-    backgroundColor: '#F1EDED', 
   },
   header: {
     alignItems: 'center',
@@ -182,9 +225,9 @@ const styles = StyleSheet.create({
   section: {
     marginBottom: 30,
     padding: 10,
-    borderWidth: 2, // Añade esto para el ancho del borde
-    borderColor: '#007bff', // Añade esto para el color del borde
-    borderRadius: 10, // Opcional: para esquinas redondeadas
+    borderWidth: 2,
+    borderColor: '#007bff',
+    borderRadius: 10,
   },
   sectionTitle: {
     alignItems: 'center',
@@ -201,6 +244,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: '#000', 
   },
+  
   project: {
     flexDirection: 'row',
     marginBottom: 20,
@@ -214,6 +258,27 @@ const styles = StyleSheet.create({
   projectImgcont: {
     width: 50,
     height: 50,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  lenguajes: {
+    width: 50,
+    height: 50,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  botonesgithub: {
+    backgroundColor: '#375ECE',
+    marginBottom: 5,
+    padding: 10,
+    borderWidth: 2,
+    borderColor: '#000',
+    borderRadius: 10,
+    alignSelf: 'center',
+  },
+  projectImgbdd: {
+    width: 85,
+    height: 100,
     borderRadius: 10,
     marginRight: 10,
   },
@@ -243,4 +308,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
