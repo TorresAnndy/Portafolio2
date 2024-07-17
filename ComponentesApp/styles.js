@@ -1,6 +1,8 @@
 import { StyleSheet, Platform, Dimensions } from 'react-native';
 
 const { height: screenHeight } = Dimensions.get('window');
+const sectionPadding = 20;
+const sectionMarginBottom = 30;
 
 export const globalStyles = StyleSheet.create({
   pagina: {
@@ -23,7 +25,6 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 10,
   },
   titulo: {
-    alignItems: 'center',
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
@@ -35,14 +36,14 @@ export const globalStyles = StyleSheet.create({
     color: '#555',
     marginBottom: 21,
   },
-  
   section: {
-    height: screenHeight - 100 - 30, // restando padding y marginBottom
-    marginBottom: 30,
-    padding: 100,
+    height: screenHeight - sectionPadding - sectionMarginBottom - (Platform.OS === 'android' ? 30 : 0),
+    marginBottom: sectionMarginBottom,
+    padding: sectionPadding,
     borderWidth: 2,
     borderColor: '#007bff',
     borderRadius: 10,
+    justifyContent: 'center', // Centra el contenido verticalmente
   },
   sectionContent: {
     alignItems: 'center',
@@ -119,7 +120,6 @@ export const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  
   menu: {
     flexDirection: 'row',
     justifyContent: 'space-around',
