@@ -116,4 +116,27 @@ export const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  
+  menu: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 3,
+    backgroundColor: '#5D87FF',
+    paddingHorizontal: 20,
+    
+  },
+  menuItemContainer: {
+    top: 5,
+    backgroundColor: '#fff',
+    marginBottom: 30,
+    padding: 10,
+    borderWidth: 2,
+    borderColor: '#011F75',
+    borderRadius: 10,
+  },
+  menuItem: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
 });

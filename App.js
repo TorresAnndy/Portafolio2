@@ -1,13 +1,17 @@
+// App.js
 import React, { useEffect, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Image, Animated, ScrollView } from 'react-native';
-import { globalStyles } from './ComponentesApp/styles'; 
-import Aprendizaje from './ComponentesApp/aprendizaje'; 
+import { globalStyles } from './ComponentesApp/styles';
+import Aprendizaje from './ComponentesApp/aprendizaje';
 import Proyectos from './ComponentesApp/Proyectos';
 import Contacto from './ComponentesApp/Contacto';
+import Menu from './ComponentesApp/menu';
+import { Navegar } from './ComponentesApp/Deslizar'; // Importa la función Navegar desde el archivo
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scrollViewRef = useRef(null);
 
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
@@ -21,10 +25,22 @@ export default function App() {
     fadeIn();
   }, []);
 
+  const handleNavigation = (section) => {
+    Navegar(scrollViewRef, section); // Llama a la función Navegar con scrollViewRef y section
+  };
+
   return (
     <View style={globalStyles.pagina}>
-      <StatusBar style="dark" />
-      <ScrollView contentContainerStyle={globalStyles.barra}>
+      <Animated.View style={{ opacity: fadeAnim }}>
+        <Menu handleNavigation={handleNavigation} />
+      </Animated.View>
+      
+      <ScrollView
+        ref={scrollViewRef}
+        contentContainerStyle={globalStyles.barra}
+      >
+        <StatusBar style="dark" />
+        
         <Animated.View style={{ opacity: fadeAnim }}>
           {/* Header */}
           <View style={globalStyles.header}>
@@ -35,7 +51,7 @@ export default function App() {
             <Text style={globalStyles.titulo}>Hola, mi nombre es Andy</Text>
             <Text style={globalStyles.subtitulos}>Junior Developer</Text>
           </View>
-
+          
           {/* Sobre mí */}
           <View style={globalStyles.section}>
             <Text style={globalStyles.titulo}>Sobre mí</Text>
@@ -43,7 +59,7 @@ export default function App() {
               Tengo 21 años, sigo una carrera de Ingeniería en Tecnologías de la Información
             </Text>
           </View>
-
+          
           {/* Áreas de Aspiraciones */}
           <View style={globalStyles.section}>
             <Text style={globalStyles.titulo}>Áreas de Aspiraciones</Text>
@@ -58,17 +74,17 @@ export default function App() {
               </View>
             </View>
           </View>
-
+          
           {/* Proyectos */}
           <Proyectos />
-
+          
           {/* Componente Aprendizaje */}
           <Aprendizaje />
-
+          
           {/* Contacto */}
           <Contacto />
-
         </Animated.View>
+        
       </ScrollView>
     </View>
   );
