@@ -15,37 +15,32 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  circularImage: {
+  imagencircular: {
     width: 150,
     height: 150,
     borderRadius: 75,
     marginBottom: 10,
   },
-  headerText: {
-    fontSize: 24,
+  titulo: {
+    alignItems: 'center',
+    textAlign: 'center',
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5,
     color: '#000', 
   },
-  subtitle: {
+  subtitulos: {
     fontSize: 20,
     color: '#555',
     marginBottom: 21,
   },
+  
   section: {
     marginBottom: 30,
     padding: 10,
     borderWidth: 2,
     borderColor: '#007bff',
     borderRadius: 10,
-  },
-  sectionTitle: {
-    alignItems: 'center',
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 15,
-    color: '#000', 
   },
   sectionContent: {
     alignItems: 'center',
