@@ -1,4 +1,6 @@
-import { StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
+
+const { height: screenHeight } = Dimensions.get('window');
 
 export const globalStyles = StyleSheet.create({
   pagina: {
@@ -35,8 +37,9 @@ export const globalStyles = StyleSheet.create({
   },
   
   section: {
+    height: screenHeight - 100 - 30, // restando padding y marginBottom
     marginBottom: 30,
-    padding: 10,
+    padding: 100,
     borderWidth: 2,
     borderColor: '#007bff',
     borderRadius: 10,
@@ -123,7 +126,6 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: 3,
     backgroundColor: '#5D87FF',
     paddingHorizontal: 20,
-    
   },
   menuItemContainer: {
     top: 5,
