@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image, Animated, TouchableOpacity, ScrollView } from 'react-native';
-import { globalStyles } from './styles'; // Importar estilos desde el archivo styles.js o styles.ts
-import Aprendizaje from './aprendizaje'; // Asegúrate de importar el componente correctamente
-import Proyectos from './Proyectos';
-import Contacto from './Contacto';
+import { Text, View, Image, Animated, ScrollView } from 'react-native';
+import { globalStyles } from './ComponentesApp/styles'; 
+import Aprendizaje from './ComponentesApp/aprendizaje'; 
+import Proyectos from './ComponentesApp/Proyectos';
+import Contacto from './ComponentesApp/Contacto';
 
 export default function App() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -66,7 +66,7 @@ export default function App() {
           <Aprendizaje />
 
           {/* Contacto */}
-          <Contacto/>
+          <Contacto />
 
         </Animated.View>
       </ScrollView>

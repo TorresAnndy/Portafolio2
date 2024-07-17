@@ -8,20 +8,20 @@
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
-  
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@expo/metro-runtime": "~3.2.1",
     "@mui/material": "^5.16.1",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "expo": "~51.0.20",
+    "expo": "~51.0.21",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.3",
     "react-native-web": "~0.19.10",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "expo-av": "~14.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
