@@ -21,9 +21,9 @@ export default function App() {
   }, []);
 
   return (
-    <View style={globalStyles.container}>
+    <View style={globalStyles.pagina}>
       <StatusBar style="dark" />
-      <ScrollView contentContainerStyle={globalStyles.scrollViewContainer}>
+      <ScrollView contentContainerStyle={globalStyles.barra}>
         <Animated.View style={{ opacity: fadeAnim }}>
           {/* Header */}
           <View style={globalStyles.header}>

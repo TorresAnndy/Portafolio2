@@ -1,12 +1,13 @@
 // styles.js
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform} from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-  container: {
+  pagina: {
     backgroundColor: '#fff', 
     flex: 1,
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
-  scrollViewContainer: {
+  barra: {
     flexGrow: 1,
     padding: 20,
   },
